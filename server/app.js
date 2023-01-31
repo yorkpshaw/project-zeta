@@ -25,6 +25,9 @@ app.use(cors({ origin: true, credentials: true }));
 const testRoutes = require("./routes/test");
 app.use("/", testRoutes);
 
+// ejs
+app.set('view engine', 'ejs');
+
 // port
 const port = process.env.PORT || 8080;
 
