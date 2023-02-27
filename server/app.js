@@ -28,6 +28,10 @@ app.use("/", testRoutes);
 // ejs
 app.set('view engine', 'ejs');
 
+app.get('/', (req, res) => {
+    res.render('home.ejs')
+})
+
 // port
 const port = process.env.PORT || 8080;
 

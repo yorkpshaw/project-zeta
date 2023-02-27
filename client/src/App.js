@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getTest } from './functions/test';
 
 function App() {
-  const [data, setData] = useState("Whaddup World");
+  const [data, setData] = useState("Hello World");
 
   useEffect(() => {
     getTest()
