@@ -70,3 +70,26 @@ Clean/Setup:
         -setData is put inside of .then and the argument is the res.message
 
     -Test API message will work only if both server and client are running
+
+-brew services start mongodb-community@6.0 starts MDB
+-"mongosh" starts the shell
+-"use <database_name>" to start a database
+-db.<collectionName>
+-show <collectionName> shows
+-"db.dogs.insertOne({name: "Onyx", age: 9, breed: "Border Collie", isCatFriendly: true})"
+    -"db.dogs.find" to show
+-insertMany expects an array
+-insert allows you to pass in document or array of documents (preferred)
+    -animalShelter> db.dogs.insert([{name: "Snowwy", age: 3, breed: "Samoyed", catFriendly: false}, {name: "Snowball", age: 1, breed: "Japanese Spitz", catFriendly: false}])
+
+-db.collection.find({breed: "Samoyed"}) The stuff between the curly braces is the query
+
+-db.collection.updateOne()
+.updateMany()
+    -must use 'atomic' operators, such as set
+    -{ $set: { <field1>: <value1>, ... }}
+    -db.dogs.updateOne({name: "Snowwy"}, {$set: {catFriendly: true}})
+    -if you update something that does not exist, it will set it
+    -db.dogs.updateMany({}, {$set: {isAGoodBoy: true}})
+    -db.dogs.updateOne({name: "Onyx"}, {$rename: {"isCatFriendly": "catFriendly"}}) -> Update the name of a prop with modifier
+.replaceOne()
